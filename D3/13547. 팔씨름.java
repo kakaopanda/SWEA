@@ -31,4 +31,4 @@ class Solution
 			System.out.println("#"+(i+1)+" "+result[i]);
 		}
 	}
-}
+} 
