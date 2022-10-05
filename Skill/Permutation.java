@@ -1,5 +1,5 @@
-// ¹Ýº¹¹®À» ÀÌ¿ëÇÏ¿© ¼ø¿­(Permutation)À» ±¸¼ºÇÏ´Â ¹æ¹ý
-// N°³ÀÇ ¼ýÀÚ¸¦ ´ë»óÀ¸·Î ¼ø¿­À» ±¸¼ºÇÒ °æ¿ì, N¹ø ÁßÃ¸µÈ for¹®ÀÇ ÇüÅÂ¸¦ °®°Ô µÈ´Ù.
+// ë°˜ë³µë¬¸ì„ ì´ìš©í•˜ì—¬ ìˆœì—´(Permutation)ì„ êµ¬ì„±í•˜ëŠ” ë°©ë²•
+// Nê°œì˜ ìˆ«ìžë¥¼ ëŒ€ìƒìœ¼ë¡œ ìˆœì—´ì„ êµ¬ì„±í•  ê²½ìš°, Në²ˆ ì¤‘ì²©ëœ forë¬¸ì˜ í˜•íƒœë¥¼ ê°–ê²Œ ëœë‹¤.
 public class Permutation {
 	public static void main(String[] args) {
 		for(int i=1; i<=3; i++) {
