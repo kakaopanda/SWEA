@@ -1,31 +1,31 @@
-// Àç±Í ÇÔ¼ö¸¦ ÀÌ¿ëÇÏ¿© Áßº¹Á¶ÇÕ(Combination With Repitition)À» ±¸¼ºÇÏ´Â ¹æ¹ý
-// Àç±Í ÇÔ¼öÀÇ °æ¿ì, Å»Ãâ Á¶°Ç°ú Å»ÃâÇÏÁö ¾Ê¾ÒÀ» ¶§ÀÇ ¼öÇà¹®À¸·Î ±¸ºÐµÈ´Ù.
+// ìž¬ê·€ í•¨ìˆ˜ë¥¼ ì´ìš©í•˜ì—¬ ì¤‘ë³µì¡°í•©(Combination With Repitition)ì„ êµ¬ì„±í•˜ëŠ” ë°©ë²•
+// ìž¬ê·€ í•¨ìˆ˜ì˜ ê²½ìš°, íƒˆì¶œ ì¡°ê±´ê³¼ íƒˆì¶œí•˜ì§€ ì•Šì•˜ì„ ë•Œì˜ ìˆ˜í–‰ë¬¸ìœ¼ë¡œ êµ¬ë¶„ëœë‹¤.
 public class CombinationWithRepitition_recursive {
-	static int numbers[]; // Á¶ÇÕÀ» ´ã´Â ¹è¿­
-	static int input[] = {1,2,3,4}; // ÀÔ·Â °ªÀ» ´ã´Â ¹è¿­
-	static int N = 3; // Á¶ÇÕÀÇ ¿ø¼Ò °³¼ö
+	static int numbers[]; // ì¡°í•©ì„ ë‹´ëŠ” ë°°ì—´
+	static int input[] = {1,2,3,4}; // ìž…ë ¥ ê°’ì„ ë‹´ëŠ” ë°°ì—´
+	static int N = 3; // ì¡°í•©ì˜ ì›ì†Œ ê°œìˆ˜
 	public static void main(String[] args) {
-		// ¼ýÀÚ 1ºÎÅÍ 4±îÁö ´ã´Â´Ù°í °¡Á¤ÇßÀ» ¶§, ÆíÀÇ¸¦ À§ÇØ ¹è¿­ÀÇ Å©±â¸¦ 1Ä­¾¿ Ãß°¡·Î ´õÇØÁØ´Ù.
+		// ìˆ«ìž 1ë¶€í„° 4ê¹Œì§€ ë‹´ëŠ”ë‹¤ê³  ê°€ì •í–ˆì„ ë•Œ, íŽ¸ì˜ë¥¼ ìœ„í•´ ë°°ì—´ì˜ í¬ê¸°ë¥¼ 1ì¹¸ì”© ì¶”ê°€ë¡œ ë”í•´ì¤€ë‹¤.
 		numbers = new int[N+1];
 		
-		// ¼ø¿­À» ±¸¼ºÇÏ´Â Àç±ÍÇÔ¼ö´Â ¾Æ¹«°Íµµ ´ã°ÜÀÖÁö ¾Ê´Â »óÅÂ¿¡¼­ ½ÃÀÛÇÑ´Ù°í °¡Á¤ÇÑ´Ù.
+		// ì¡°í•©ì„ êµ¬ì„±í•˜ëŠ” ìž¬ê·€í•¨ìˆ˜ëŠ” ì•„ë¬´ê²ƒë„ ë‹´ê²¨ìžˆì§€ ì•ŠëŠ” ìƒíƒœì—ì„œ ì‹œìž‘í•œë‹¤ê³  ê°€ì •í•œë‹¤.
 		comb(0,0);
 	}
 	
 	static void comb(int cnt, int index) {
-		// Case1. [Å»Ãâ¹®] Á¶ÇÕÀÌ ¸ðµÎ ±¸¼ºµÈ °æ¿ì
+		// Case1. [íƒˆì¶œë¬¸] ì¡°í•©ì´ ëª¨ë‘ êµ¬ì„±ëœ ê²½ìš°
 		if(cnt==N) {
-			// Á¶ÇÕ ±¸¼º½Ã Ã³¸®ÇÒ ³»¿ëÀ» ÀÛ¼ºÇÑ´Ù.
+			// ì¡°í•© êµ¬ì„±ì‹œ ì²˜ë¦¬í•  ë‚´ìš©ì„ ìž‘ì„±í•œë‹¤.
 			for(int i=0; i<N; i++) {
 				System.out.print(numbers[i]+" ");
 			}
 			System.out.println();
 		}
-		// Case2. [¼öÇà¹®] Á¶ÇÕÀÌ ¸ðµÎ ±¸¼ºµÇÁö ¾ÊÀº °æ¿ì
+		// Case2. [ìˆ˜í–‰ë¬¸] ì¡°í•©ì´ ëª¨ë‘ êµ¬ì„±ë˜ì§€ ì•Šì€ ê²½ìš°
 		else {
 			for(int i=index; i<input.length; i++) {
 				numbers[cnt] = input[i];
-				comb(cnt+1, i); // -> ´ÙÀ½ ¿ø¼Ò¸¦ ´ãÀ» ¶§, ÀÎµ¦½º¿¡ 1À» ´õÇÏÁö ¾Ê°í °è¼Ó ÁøÇàÇÏ¸é µÈ´Ù.
+				comb(cnt+1, i); // -> ë‹¤ìŒ ì›ì†Œë¥¼ ë‹´ì„ ë•Œ, ì¸ë±ìŠ¤ì— 1ì„ ë”í•˜ì§€ ì•Šê³  ê³„ì† ì§„í–‰í•˜ë©´ ëœë‹¤.
 			}
 		}
 	}
